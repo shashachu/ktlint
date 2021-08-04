@@ -5,7 +5,6 @@ import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.PrintStream
 import org.junit.Assert.assertEquals
-import org.junit.Ignore
 import org.junit.Test
 
 class SarifReporterTest {
