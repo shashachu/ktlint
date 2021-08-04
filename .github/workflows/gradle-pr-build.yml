@@ -48,7 +48,6 @@ jobs:
         if-no-files-found: warn
     - name: Upload test results
       uses: actions/upload-artifact@v2
-      if: failure()
       with:
         name: Test artifacts
         path: '**/tests/**/*.html'
