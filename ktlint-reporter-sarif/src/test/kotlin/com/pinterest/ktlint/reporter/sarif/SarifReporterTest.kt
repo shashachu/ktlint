@@ -10,7 +10,6 @@ import org.junit.Test
 
 class SarifReporterTest {
 
-    @Ignore("https://github.com/pinterest/ktlint/issues/1191")
     @Test
     fun testReportGeneration() {
         val workingDirectory = System.getProperty("user.home").sanitize()
