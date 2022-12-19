@@ -54,12 +54,8 @@ tasks.register<JavaExec>("ktlint") {
 }
 
 // Deployment tasks
-val githubToken: String = if (project.hasProperty("servers.github.privKey")) {
-    project.property("servers.github.privKey").toString()
-} else {
-    logger.warn("No github token specified")
-    ""
-}
+val githubToken: String = project.findProperty("servers.github.privKey")?.toString()
+    ?: System.getenv("PRIVATEKEY_GITHUB")
 
 val shadowJarExecutable: TaskProvider<Task> by lazy {
     projects.ktlint.dependencyProject.tasks.named("shadowJarExecutable")
